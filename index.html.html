@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Ogre Cave — Guest Signup</title>
+<style>
+  :root{
+    --bg:#050608; --panel:#0e1117; --edge:#202530; --ink:#e7e9ee; --muted:#9aa0a6;
+    --accent:#67f39b; --accent2:#8fffc1; --neon-pink:#ff4fa3; --neon-cyan:#3cf0ff;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0; background:radial-gradient(1200px 800px at 70% -20%, #141922 0%, #050608 50%), var(--bg); color:var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;}
+
+  .wrap{max-width:960px; margin:0 auto; padding:32px 20px 80px}
+
+  header{display:flex; align-items:center; gap:18px; margin-bottom:28px; position:relative;}
+  header::after{content:''; position:absolute; left:0; right:0; bottom:-8px; height:2px; background:linear-gradient(90deg, var(--neon-pink), var(--neon-cyan)); box-shadow:0 0 12px var(--neon-pink), 0 0 24px var(--neon-cyan);}
+  .logo{width:58px; height:58px; border-radius:14px; background:linear-gradient(135deg,#10151e,#181f28); border:1px solid var(--edge); display:grid; place-items:center; color:var(--accent); font-weight:900; font-size:28px; box-shadow:0 0 16px rgba(103,243,155,.4);}
+  h1{margin:0; font-size:30px; letter-spacing:.7px; text-shadow:0 0 12px var(--accent2); font-family:'Orbitron', Inter, ui-sans-serif, system-ui, sans-serif;}
+  .subtitle{color:var(--muted); margin-top:6px; font-size:15px}
+
+  .panel{background:var(--panel); border:1px solid var(--edge); border-radius:16px; padding:24px; box-shadow: 0 8px 40px rgba(0,0,0,.4), inset 0 0 30px rgba(103,243,155,.05)}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+
+  .rules h2{margin:0 0 12px 0; font-size:20px; color:var(--neon-cyan); text-shadow:0 0 6px var(--neon-cyan)}
+  .rules p{margin:0 0 14px 0; line-height:1.55; color:var(--ink)}
+  .rules ul{margin:0; padding-left:20px; line-height:1.55}
+  .rules li{margin:.45rem 0}
+
+  .sectionTitle{margin:24px 0 12px; font-size:18px; font-weight:700; color:var(--neon-pink); text-shadow:0 0 6px var(--neon-pink)}
+  .cta{margin-top:12px; font-size:14px; color:var(--muted)}
+
+  label{font-size:13px; color:var(--muted)}
+  input[type=text]{width:100%; background:#0d1014; color:var(--ink); border:1px solid var(--edge); border-radius:12px; padding:12px; font-size:16px; font-family:inherit}
+  input[type=checkbox]{transform: translateY(1px)}
+  button{background:linear-gradient(90deg,var(--neon-pink),var(--neon-cyan)); border:none; color:#fff; padding:12px 14px; border-radius:12px; font-weight:800; cursor:pointer; transition:all .2s; text-shadow:0 0 6px #000}
+  button:hover{filter:brightness(1.15); box-shadow:0 0 12px var(--neon-pink),0 0 18px var(--neon-cyan)}
+  button:disabled{opacity:.6; cursor:not-allowed}
+
+  .row{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+
+  .notice{margin-top:12px; padding:12px 14px; border-radius:12px; font-size:14px}
+  .success{border:1px solid var(--accent); background:rgba(103,243,155,.08); color:var(--accent)}
+  .error{border:1px solid var(--neon-pink); background:rgba(255,79,163,.08); color:var(--neon-pink)}
+
+  .footer{text-align:center; color:var(--muted); font-size:13px; margin-top:24px}
+  .muted{color:var(--muted)}
+  .center{display:flex; align-items:center; justify-content:center}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">👹</div>
+      <div>
+        <h1>Guest Signup — <span style="color:var(--accent)">The Ogre Cave</span></h1>
+        <div class="subtitle">Step into Cyber City’s underground radio lounge — improv, chaos, neon lights, and good vibes only.</div>
+      </div>
+    </header>
+
+    <div class="panel grid">
+      <section class="rules">
+        <h2>Welcome to the Cave</h2>
+        <p><strong>The Ogre Cave</strong> is a live, radio‑style show hosted by Oni‑1. It’s part late‑night chaos, part community hangout — where creators and friends can cut loose, share stories, and light up the mic together under the neon glow of Cyber City.</p>
+
+        <p><strong>Important:</strong> This signup is for <span style="color:var(--neon-pink)">VTubers and Content Creators</span> who would like to appear as <em>guests</em> on the show. Regular Ogre Cave sessions are usually open‑lobby, so unless you are looking to be a collab or star guest featured on the stream, this form is not for you.</p>
+
+        <div class="sectionTitle">What You Can Expect</div>
+        <ul>
+          <li><strong>Show Up As You:</strong> Be yourself. This is about your energy, not playing a role (unless you want to).</li>
+          <li><strong>Vibes Over Pressure:</strong> We’re here for laughs, riffs, and honest talk. There are no winners, just conversation.</li>
+          <li><strong>Spotlight Included:</strong> Every guest gets time to talk about their projects, passions, or upcoming content.</li>
+          <li><strong>Community First:</strong> Respect, good humor, and positive chaos are the currency here.</li>
+        </ul>
+
+        <div class="sectionTitle">Boundaries & Ground Rules</div>
+        <ul>
+          <li><strong>No Hate / No Harassment:</strong> Racism, sexism, homophobia, transphobia, or harassment aren’t tolerated — period.</li>
+          <li><strong>No Doom Spirals:</strong> We avoid deep dives into trauma or extreme negativity. If things get heavy, Oni‑1 will steer us back.</li>
+          <li><strong>Mature But Respectful:</strong> Swearing and spicy topics are fine, but don’t cross into harmful or cruel territory.</li>
+          <li><strong>Collaborative Energy:</strong> The Cave works best when everyone builds the vibe together.</li>
+          <li><strong>Discord Required:</strong> To appear, join the Discord server during your slot. You can leave afterward — no strings attached.</li>
+        </ul>
+
+        <p style="margin-top:14px">If you’re ready to bring your energy to the Cave, drop your info below and lock in your place on the guest list.</p>
+      </section>
+
+      <section>
+        <div class="stack">
+          <label>Display Name</label>
+          <input id="name" type="text" placeholder="e.g., Oni‑1, LunaVT, @yourhandle" autocomplete="nickname" />
+
+          <label>Discord Handle</label>
+          <input id="discord" type="text" placeholder="username (or username#1234)" autocomplete="off" />
+
+          <label>Link to Your Channel or Content</label>
+          <input id="link" type="text" placeholder="https://twitch.tv/yourname or https://youtube.com/@yourname" autocomplete="url" />
+
+          <div class="row">
+            <input id="agree" type="checkbox" />
+            <label for="agree">I’ve read the expectations and I’m in.</label>
+          </div>
+
+          <div class="row">
+            <button id="submitBtn">Sign Me Up</button>
+          </div>
+
+          <div id="status" class="notice muted" style="display:none"></div>
+          <div id="after" class="notice success" style="display:none"></div>
+          <div id="error" class="notice error" style="display:none"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer">Hosted by Oni‑1 • Cyber City Underground • Thanks for bringing your light to the Cave 🌃</div>
+  </div>
+
+<script>
+const CONFIG = {
+  SHEETS_ENDPOINT: 'https://script.google.com/macros/s/AKfycbzxXTnfmMn77u-AHQo-X36Qw6WGW8Q_oik6xU0w9ZE4WEKM3WQtkRVlNFZKa24cxRUD/exec',
+  DISCORD_INVITE:  'https://discord.gg/CtVfPAzneK'
+};
+
+const el = (id)=>document.getElementById(id);
+const nameEl = el('name');
+const discEl = el('discord');
+const linkEl = el('link');
+const agreeEl= el('agree');
+const submit = el('submitBtn');
+const status = el('status');
+const after  = el('after');
+const error  = el('error');
+
+submit.addEventListener('click', async ()=>{
+  error.style.display='none'; status.style.display='none'; after.style.display='none';
+  const name = nameEl.value.trim();
+  const discord = discEl.value.trim();
+  const link = linkEl.value.trim();
+  if(!name || !discord || !link){ return showError('Please add your display name, Discord, and a link to your content.'); }
+  if(!agreeEl.checked){ return showError('Please confirm you’re good with the expectations.'); }
+
+  submit.disabled = true; submit.textContent = 'Submitting…';
+  status.style.display='block'; status.textContent = 'Sending to the Cave…';
+
+  const payload = { name, discord, link, ts: new Date().toISOString(), source: 'ogre-cave-guest-signup' };
+  const encoded = new URLSearchParams(payload).toString();
+
+  let sent = false; let note = '';
+  try{
+    const res = await fetch(CONFIG.SHEETS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
+      body: encoded
+    });
+    if(res.ok){
+      sent = true;
+      note = 'direct ok';
+    } else {
+      note = 'HTTP '+res.status;
+    }
+  }catch(err){ note = String(err); }
+
+  if(!sent){
+    try{
+      await fetch(CONFIG.SHEETS_ENDPOINT, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
+        body: encoded
+      });
+      sent = true; note = 'fallback used';
+    }catch(err){ note = String(err); }
+  }
+
+  if(sent){
+    status.style.display='block'; status.textContent = 'Submitted ('+note+')';
+    after.style.display='block'; after.innerHTML = '<strong>✅ You’re on the guest list!</strong><div>Next step: join the Discord so we can coordinate your appearance:</div><div class="center" style="margin-top:8px"><a href="'+CONFIG.DISCORD_INVITE+'" target="_blank" style="color:var(--accent2); font-weight:800; text-shadow:0 0 6px var(--accent2)">Join the Ogre Cave Discord →</a></div>';
+  } else {
+    showError('Could not submit right now. Please try again later. ('+note+')');
+  }
+  submit.disabled = false; submit.textContent = 'Sign Me Up';
+});
+
+function showError(msg){ error.textContent = msg; error.style.display='block'; }
+</script>
+</body>
+</html>
