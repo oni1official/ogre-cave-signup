@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Ogre Cave — Guest Signup</title>
+<title>The Ogre Cave — Topic Submission</title>
 <style>
   :root{
     --bg:#050608; --panel:#0e1117; --edge:#202530; --ink:#e7e9ee; --muted:#9aa0a6;
     --accent:#67f39b; --accent2:#8fffc1; --neon-pink:#ff4fa3; --neon-cyan:#3cf0ff;
+    --warning:#f7d774;
   }
   *{box-sizing:border-box}
   html,body{height:100%}
   body{margin:0; background:radial-gradient(1200px 800px at 70% -20%, #141922 0%, #050608 50%), var(--bg); color:var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;}
 
-  .wrap{max-width:960px; margin:0 auto; padding:32px 20px 80px}
+  .wrap{max-width:1020px; margin:0 auto; padding:32px 20px 80px}
 
   header{display:flex; align-items:center; gap:18px; margin-bottom:28px; position:relative;}
   header::after{content:''; position:absolute; left:0; right:0; bottom:-8px; height:2px; background:linear-gradient(90deg, var(--neon-pink), var(--neon-cyan)); box-shadow:0 0 12px var(--neon-pink), 0 0 24px var(--neon-cyan);}
@@ -22,7 +23,7 @@
   .subtitle{color:var(--muted); margin-top:6px; font-size:15px}
 
   .panel{background:var(--panel); border:1px solid var(--edge); border-radius:16px; padding:24px; box-shadow: 0 8px 40px rgba(0,0,0,.4), inset 0 0 30px rgba(103,243,155,.05)}
-  .grid{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+  .grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:26px}
 
   .rules h2{margin:0 0 12px 0; font-size:20px; color:var(--neon-cyan); text-shadow:0 0 6px var(--neon-cyan)}
   .rules p{margin:0 0 14px 0; line-height:1.55; color:var(--ink)}
@@ -30,24 +31,37 @@
   .rules li{margin:.45rem 0}
 
   .sectionTitle{margin:24px 0 12px; font-size:18px; font-weight:700; color:var(--neon-pink); text-shadow:0 0 6px var(--neon-pink)}
+  .callout{border:1px solid rgba(60,240,255,.35); background:rgba(60,240,255,.06); border-radius:12px; padding:12px 14px; margin:16px 0; line-height:1.5}
   .cta{margin-top:12px; font-size:14px; color:var(--muted)}
 
+  .stack{display:grid; gap:12px}
   label{font-size:13px; color:var(--muted)}
-  input[type=text]{width:100%; background:#0d1014; color:var(--ink); border:1px solid var(--edge); border-radius:12px; padding:12px; font-size:16px; font-family:inherit}
+  input[type=text], input[type=url], input[type=email], select, textarea{width:100%; background:#0d1014; color:var(--ink); border:1px solid var(--edge); border-radius:12px; padding:12px; font-size:16px; font-family:inherit; outline:none}
+  textarea{min-height:120px; resize:vertical; line-height:1.45}
+  input:focus, select:focus, textarea:focus{border-color:var(--neon-cyan); box-shadow:0 0 0 3px rgba(60,240,255,.08)}
   input[type=checkbox]{transform: translateY(1px)}
   button{background:linear-gradient(90deg,var(--neon-pink),var(--neon-cyan)); border:none; color:#fff; padding:12px 14px; border-radius:12px; font-weight:800; cursor:pointer; transition:all .2s; text-shadow:0 0 6px #000}
   button:hover{filter:brightness(1.15); box-shadow:0 0 12px var(--neon-pink),0 0 18px var(--neon-cyan)}
   button:disabled{opacity:.6; cursor:not-allowed}
 
   .row{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 
-  .notice{margin-top:12px; padding:12px 14px; border-radius:12px; font-size:14px}
+  .notice{margin-top:12px; padding:12px 14px; border-radius:12px; font-size:14px; line-height:1.45}
   .success{border:1px solid var(--accent); background:rgba(103,243,155,.08); color:var(--accent)}
   .error{border:1px solid var(--neon-pink); background:rgba(255,79,163,.08); color:var(--neon-pink)}
 
   .footer{text-align:center; color:var(--muted); font-size:13px; margin-top:24px}
   .muted{color:var(--muted)}
+  .fineprint{font-size:12px; color:var(--muted); line-height:1.45}
   .center{display:flex; align-items:center; justify-content:center}
+
+  @media (max-width: 820px){
+    .grid{grid-template-columns:1fr}
+    .two{grid-template-columns:1fr}
+    h1{font-size:24px}
+    header{align-items:flex-start}
+  }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 </head>
@@ -56,66 +70,110 @@
     <header>
       <div class="logo">👹</div>
       <div>
-        <h1>Guest Signup — <span style="color:var(--accent)">The Ogre Cave</span></h1>
-        <div class="subtitle">Step into Cyber City’s underground radio lounge — improv, chaos, neon lights, and good vibes only.</div>
+        <h1>Topic Submission — <span style="color:var(--accent)">The Ogre Cave</span></h1>
+        <div class="subtitle">Send a signal to Cyber City. Share a topic, discovery, project, or guest idea for The Ogre Cave.</div>
       </div>
     </header>
 
     <div class="panel grid">
       <section class="rules">
-        <h2>Welcome to the Cave</h2>
-        <p><strong>The Ogre Cave</strong> is a live, radio‑style show hosted by Oni‑1. It’s part late‑night chaos, part community hangout — where creators and friends can cut loose, share stories, and light up the mic together under the neon glow of Cyber City.</p>
+        <h2>Send It to the Cave</h2>
+        <p><strong>The Ogre Cave</strong> is Oni-1's live, radio-style broadcast from Cyber City: a place for conversation, community chaos, creativity, gaming, music, internet culture, and the underground topics that deserve more light.</p>
 
-        <p><strong>Important:</strong> This signup is for <span style="color:var(--neon-pink)">VTubers and Content Creators</span> who would like to appear as <em>guests</em> on the show. Regular Ogre Cave sessions are usually open‑lobby, so unless you are looking to be a collab or star guest featured on the stream, this form is not for you.</p>
+        <p>As the <strong>Voice of the Underground</strong>, Oni-1 wants the Cave to be a place where the audience can help point the spotlight. Your idea does not have to be huge, polished, or perfect. If you think it could start a good conversation, make people laugh, help someone discover something new, or give an overlooked topic a little more light, send it in.</p>
 
-        <div class="sectionTitle">What You Can Expect</div>
+        <div class="callout"><strong>Submit a topic, project, creator, discovery, question, or guest idea.</strong> As long as it fits the guidelines, all kinds of discussions are welcome here: fun, weird, creative, thoughtful, niche, personal, underground, or just something you think deserves to be heard.</div>
+
+        <div class="sectionTitle">Good Submissions Include</div>
         <ul>
-          <li><strong>Show Up As You:</strong> Be yourself. This is about your energy, not playing a role (unless you want to).</li>
-          <li><strong>Vibes Over Pressure:</strong> We’re here for laughs, riffs, and honest talk. There are no winners, just conversation.</li>
-          <li><strong>Spotlight Included:</strong> Every guest gets time to talk about their projects, passions, or upcoming content.</li>
-          <li><strong>Community First:</strong> Respect, good humor, and positive chaos are the currency here.</li>
+          <li><strong>Topics:</strong> Questions, opinions, debates, funny observations, internet weirdness, or culture discussions worth bringing up live.</li>
+          <li><strong>Discoveries:</strong> Indie games, music, creators, tools, videos, communities, stories, or projects that deserve attention.</li>
+          <li><strong>Your Own Work:</strong> Music, streams, art, games, writing, events, or anything you're building and want to share.</li>
+          <li><strong>Guest Ideas:</strong> Let Oni-1 know if you or someone else could be a good fit for a future featured conversation.</li>
         </ul>
 
-        <div class="sectionTitle">Boundaries & Ground Rules</div>
+        <div class="sectionTitle">Keep the Signal Clean</div>
         <ul>
-          <li><strong>No Hate / No Harassment:</strong> Racism, sexism, homophobia, transphobia, or harassment aren’t tolerated — period.</li>
-          <li><strong>No Doom Spirals:</strong> We avoid deep dives into trauma or extreme negativity. If things get heavy, Oni‑1 will steer us back.</li>
-          <li><strong>Mature But Respectful:</strong> Swearing and spicy topics are fine, but don’t cross into harmful or cruel territory.</li>
-          <li><strong>Collaborative Energy:</strong> The Cave works best when everyone builds the vibe together.</li>
-          <li><strong>Discord Required:</strong> To appear, join the Discord server during your slot. You can leave afterward — no strings attached.</li>
+          <li><strong>No hate or harassment.</strong> Bigotry, targeted attacks, or cruel behavior are not welcome.</li>
+          <li><strong>No doom spirals.</strong> Heavy topics can exist, but the Cave is not built for trauma dumping or extreme negativity.</li>
+          <li><strong>Bring context if you can.</strong> A few details help Oni-1 understand why the topic matters, but you do not need to write a full essay.</li>
+          <li><strong>Submission does not guarantee coverage.</strong> Oni-1 may adjust, combine, save, or skip topics depending on fit and timing.</li>
         </ul>
 
-        <p style="margin-top:14px">If you’re ready to bring your energy to the Cave, drop your info below and lock in your place on the guest list.</p>
+        <p style="margin-top:14px">No pressure to make it perfect. Drop your signal below. The Cave is listening.</p>
       </section>
 
       <section>
         <div class="stack">
-          <label>Display Name</label>
-          <input id="name" type="text" placeholder="e.g., Oni‑1, LunaVT, @yourhandle" autocomplete="nickname" />
+          <div class="two">
+            <div>
+              <label for="name">Display Name *</label>
+              <input id="name" type="text" placeholder="e.g., Oni-1, Navi_Protocol, @yourhandle" autocomplete="nickname" />
+            </div>
+            <div>
+              <label for="contactMethod">Preferred Contact Method *</label>
+              <select id="contactMethod">
+                <option value="">Choose one...</option>
+                <option>Discord</option>
+                <option>Email</option>
+                <option>Twitter/X</option>
+                <option>Bluesky</option>
+                <option>Instagram</option>
+                <option>TikTok</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
 
-          <label>Discord Handle</label>
-          <input id="discord" type="text" placeholder="username (or username#1234)" autocomplete="off" />
+          <label for="contact">Contact Info *</label>
+          <input id="contact" type="text" placeholder="Username, email, profile link, or the best way to reach you" autocomplete="off" />
 
-          <label>Link to Your Channel or Content</label>
-          <input id="link" type="text" placeholder="https://twitch.tv/yourname or https://youtube.com/@yourname" autocomplete="url" />
+          <label for="topicTitle">Topic / Submission Title *</label>
+          <input id="topicTitle" type="text" placeholder="What should we call this signal?" />
+
+          <label for="topicType">Submission Type *</label>
+          <select id="topicType">
+            <option value="">Choose one...</option>
+            <option>Topic or discussion idea</option>
+            <option>Creator, project, or recommendation</option>
+            <option>Guest suggestion or guest interest</option>
+            <option>Other</option>
+          </select>
+
+          <label for="description">What should Oni-1 know? *</label>
+          <textarea id="description" placeholder="Tell Oni-1 what this is and why you think it belongs in the Cave. It can be fun, weird, useful, overlooked, personal, creative, or just something you want people to talk about."></textarea>
+
+          <label for="link">Relevant Link</label>
+          <input id="link" type="url" placeholder="https://..." autocomplete="url" />
+
+          <label for="guestInterest">Would you like to be considered as a special guest?</label>
+          <select id="guestInterest">
+            <option>No, I just want to submit a topic.</option>
+            <option>Maybe, depending on the topic.</option>
+            <option>Yes, I would like to be considered as a guest.</option>
+          </select>
+
+          <label for="availability">Availability / Notes</label>
+          <textarea id="availability" placeholder="Optional: share time zone, usual availability, comfort level, extra links, or anything else useful." style="min-height:80px"></textarea>
 
           <div class="row">
             <input id="agree" type="checkbox" />
-            <label for="agree">I’ve read the expectations and I’m in.</label>
+            <label for="agree">I understand this is a submission, not a guarantee of coverage or guest placement.</label>
           </div>
 
           <div class="row">
-            <button id="submitBtn">Sign Me Up</button>
+            <button id="submitBtn">Send the Signal</button>
           </div>
 
           <div id="status" class="notice muted" style="display:none"></div>
           <div id="after" class="notice success" style="display:none"></div>
           <div id="error" class="notice error" style="display:none"></div>
+          <div class="fineprint">Tip: Small ideas are welcome too. A quick spark can still turn into a great Ogre Cave conversation.</div>
         </div>
       </section>
     </div>
 
-    <div class="footer">Hosted by Oni‑1 • Cyber City Underground • Thanks for bringing your light to the Cave 🌃</div>
+    <div class="footer">Hosted by Oni-1 • Cyber City Underground • Thanks for sending your signal to the Cave 🌃</div>
   </div>
 
 <script>
@@ -125,10 +183,18 @@ const CONFIG = {
 };
 
 const el = (id)=>document.getElementById(id);
-const nameEl = el('name');
-const discEl = el('discord');
-const linkEl = el('link');
-const agreeEl= el('agree');
+const fields = {
+  name: el('name'),
+  contactMethod: el('contactMethod'),
+  contact: el('contact'),
+  topicTitle: el('topicTitle'),
+  topicType: el('topicType'),
+  description: el('description'),
+  link: el('link'),
+  guestInterest: el('guestInterest'),
+  availability: el('availability'),
+  agree: el('agree')
+};
 const submit = el('submitBtn');
 const status = el('status');
 const after  = el('after');
@@ -136,16 +202,31 @@ const error  = el('error');
 
 submit.addEventListener('click', async ()=>{
   error.style.display='none'; status.style.display='none'; after.style.display='none';
-  const name = nameEl.value.trim();
-  const discord = discEl.value.trim();
-  const link = linkEl.value.trim();
-  if(!name || !discord || !link){ return showError('Please add your display name, Discord, and a link to your content.'); }
-  if(!agreeEl.checked){ return showError('Please confirm you’re good with the expectations.'); }
 
-  submit.disabled = true; submit.textContent = 'Submitting…';
-  status.style.display='block'; status.textContent = 'Sending to the Cave…';
+  const payload = {
+    name: fields.name.value.trim(),
+    contactMethod: fields.contactMethod.value,
+    contact: fields.contact.value.trim(),
+    topicTitle: fields.topicTitle.value.trim(),
+    topicType: fields.topicType.value,
+    description: fields.description.value.trim(),
+    link: fields.link.value.trim(),
+    guestInterest: fields.guestInterest.value,
+    availability: fields.availability.value.trim(),
+    ts: new Date().toISOString(),
+    source: 'ogre-cave-topic-submission'
+  };
 
-  const payload = { name, discord, link, ts: new Date().toISOString(), source: 'ogre-cave-guest-signup' };
+  if(!payload.name || !payload.contactMethod || !payload.contact || !payload.topicTitle || !payload.topicType || !payload.description){
+    return showError('Please add your name, preferred contact method, contact info, topic title, submission type, and description.');
+  }
+  if(!fields.agree.checked){
+    return showError('Please confirm you understand this is a submission, not a guarantee of coverage.');
+  }
+
+  submit.disabled = true; submit.textContent = 'Sending...';
+  status.style.display='block'; status.textContent = 'Sending your signal to the Cave...';
+
   const encoded = new URLSearchParams(payload).toString();
 
   let sent = false; let note = '';
@@ -176,11 +257,18 @@ submit.addEventListener('click', async ()=>{
 
   if(sent){
     status.style.display='block'; status.textContent = 'Submitted ('+note+')';
-    after.style.display='block'; after.innerHTML = '<strong>✅ You’re on the guest list!</strong><div>Next step: join the Discord so we can coordinate your appearance:</div><div class="center" style="margin-top:8px"><a href="'+CONFIG.DISCORD_INVITE+'" target="_blank" style="color:var(--accent2); font-weight:800; text-shadow:0 0 6px var(--accent2)">Join the Ogre Cave Discord →</a></div>';
+    after.style.display='block';
+    after.innerHTML = '<strong>✅ Signal received!</strong><div>Thanks for sending this to The Ogre Cave. If Oni-1 needs more details or wants to bring you on as a guest, you may be contacted through the info you provided.</div><div class="center" style="margin-top:8px"><a href="'+CONFIG.DISCORD_INVITE+'" target="_blank" style="color:var(--accent2); font-weight:800; text-shadow:0 0 6px var(--accent2)">Join the Cyber City Underground Discord →</a></div>';
+    Object.values(fields).forEach(field=>{
+      if(field && field.tagName === 'INPUT' && field.type !== 'checkbox') field.value = '';
+      if(field && field.tagName === 'TEXTAREA') field.value = '';
+      if(field && field.tagName === 'SELECT') field.selectedIndex = 0;
+      if(field && field.type === 'checkbox') field.checked = false;
+    });
   } else {
     showError('Could not submit right now. Please try again later. ('+note+')');
   }
-  submit.disabled = false; submit.textContent = 'Sign Me Up';
+  submit.disabled = false; submit.textContent = 'Send the Signal';
 });
 
 function showError(msg){ error.textContent = msg; error.style.display='block'; }
